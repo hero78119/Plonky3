@@ -1,5 +1,6 @@
+use crate::data_traits::TwoAdicData;
+use p3_field::PrimeCharacteristicRing;
 use p3_field::extension::{BinomiallyExtendable, HasTwoAdicBinomialExtension};
-use p3_field::{PrimeCharacteristicRing, TwoAdicField};
 
 use crate::Goldilocks;
 
@@ -26,7 +27,7 @@ impl HasTwoAdicBinomialExtension<2> for Goldilocks {
         if bits == 33 {
             [Self::ZERO, Self::new(15659105665374529263)]
         } else {
-            [Self::two_adic_generator(bits), Self::ZERO]
+            [Self::TWO_ADIC_GENERATORS[bits], Self::ZERO]
         }
     }
 }
